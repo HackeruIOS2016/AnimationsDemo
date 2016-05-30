@@ -21,34 +21,43 @@ class ViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        resetAnimation()
+    }
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        resetAnimation()
+        
         animateLogin()
         
     }
     
     func animateLogin(){
         UIView.animateWithDuration(0.5, delay: 0, options: [.CurveEaseInOut], animations: { () -> Void in
-                self.userName.center.x = self.view.center.x
+                 self.userCenterX.constant = 0
+                 self.view.layoutIfNeeded()
             }, completion: nil)
         
         UIView.animateWithDuration(0.5, delay: 0.4, options: [.CurveEaseInOut], animations: { () -> Void in
-                self.passwordTextField.center.x = self.view.center.x
+              self.passwordCenterX.constant = 0
+              self.view.layoutIfNeeded()
             }, completion: nil)
         
         UIView.animateWithDuration(0.5, delay: 0.9, options: [.CurveEaseInOut], animations: { () -> Void in
-                self.loginButton.center.x = self.view.center.x + 70
+                self.loginCenterX.constant = 60
+                self.view.layoutIfNeeded()
             }, completion: nil)
         
         
     }
     
     func resetAnimation(){
-        userName.center.x = -200
-        passwordTextField.center.x = -200
-        loginButton.center.x = -200
+         userCenterX.constant = -300
+         passwordCenterX.constant = -300
+         loginCenterX.constant = -300
+         self.view.layoutIfNeeded()
     }
 }
  
