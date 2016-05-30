@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="HvH-7A-TOS">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -19,6 +19,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg-sunny" translatesAutoresizingMaskIntoConstraints="NO" id="Olz-Tl-BqL">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg-sunny-cloud-2" translatesAutoresizingMaskIntoConstraints="NO" id="Jyb-38-FPO">
+                                <rect key="frame" x="11" y="66" width="138" height="49"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg-sunny-cloud-3" translatesAutoresizingMaskIntoConstraints="NO" id="afq-oZ-O7f">
+                                <rect key="frame" x="142" y="161" width="156" height="59"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="afq-oZ-O7f" secondAttribute="height" multiplier="156:59" id="Csf-QJ-OTS"/>
+                                    <constraint firstAttribute="height" constant="59" id="lpN-t8-SUF"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg-sunny-cloud-4" translatesAutoresizingMaskIntoConstraints="NO" id="rGf-Bz-vrj">
+                                <rect key="frame" x="194" y="230" width="113" height="61"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="rGf-Bz-vrj" secondAttribute="height" multiplier="113:61" id="D9o-gS-xhq"/>
+                                    <constraint firstAttribute="height" constant="61" id="YpB-Ta-RUW"/>
+                                </constraints>
+                            </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Name..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Ni-1e-tse">
                                 <rect key="frame" x="32" y="28" width="256" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -37,21 +57,44 @@
                                 </constraints>
                                 <state key="normal" title="Login" backgroundImage="banner1"/>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg-sunny-cloud-1" translatesAutoresizingMaskIntoConstraints="NO" id="ceo-Wg-H4q">
+                                <rect key="frame" x="27" y="257" width="167" height="86"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ceo-Wg-H4q" secondAttribute="height" multiplier="167:86" id="4S6-JU-ax9"/>
+                                    <constraint firstAttribute="height" constant="86" id="cNA-98-09z"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="0Ni-1e-tse" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="3fF-kx-Fjl"/>
                             <constraint firstItem="C3m-7I-bEl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7LZ-6H-12I"/>
                             <constraint firstItem="C3m-7I-bEl" firstAttribute="top" secondItem="0Ni-1e-tse" secondAttribute="bottom" constant="8" id="B2o-EO-YCB"/>
+                            <constraint firstItem="ceo-Wg-H4q" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="60" id="FNJ-CK-7we"/>
+                            <constraint firstItem="ceo-Wg-H4q" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-50" id="FST-Bh-1n5"/>
+                            <constraint firstItem="rGf-Bz-vrj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="90" id="IzL-8g-22S"/>
+                            <constraint firstItem="Olz-Tl-BqL" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="NxN-gh-oTo"/>
+                            <constraint firstItem="rGf-Bz-vrj" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="20" id="Pul-9u-OgW"/>
                             <constraint firstItem="0Ni-1e-tse" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UXx-ep-tJE"/>
                             <constraint firstItem="LUU-yv-Yh9" firstAttribute="top" secondItem="C3m-7I-bEl" secondAttribute="bottom" constant="8" id="WTE-jF-lfh"/>
+                            <constraint firstItem="Jyb-38-FPO" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-150" id="YFG-7b-eyu"/>
                             <constraint firstItem="LUU-yv-Yh9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="60" id="b4s-Ov-W6t"/>
+                            <constraint firstAttribute="trailing" secondItem="Olz-Tl-BqL" secondAttribute="trailing" id="g6h-YB-crE"/>
                             <constraint firstItem="C3m-7I-bEl" firstAttribute="width" secondItem="0Ni-1e-tse" secondAttribute="width" id="k9X-Gh-AjU"/>
                             <constraint firstItem="0Ni-1e-tse" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="pVb-zZ-2Od"/>
+                            <constraint firstItem="afq-oZ-O7f" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-50" id="ryK-GA-LWT"/>
+                            <constraint firstItem="Jyb-38-FPO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-80" id="xT8-hq-QOs"/>
+                            <constraint firstItem="Olz-Tl-BqL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="zEo-Ko-MOl"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Olz-Tl-BqL" secondAttribute="bottom" id="zdP-jw-To1"/>
+                            <constraint firstItem="afq-oZ-O7f" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="60" id="zmY-xg-GPc"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="cloud1X" destination="xT8-hq-QOs" id="lkP-J6-sp8"/>
+                        <outlet property="cloud2x" destination="zmY-xg-GPc" id="P07-3a-1EG"/>
+                        <outlet property="cloud3X" destination="IzL-8g-22S" id="F7D-s7-ljC"/>
+                        <outlet property="cloud4X" destination="FST-Bh-1n5" id="G70-Hc-Qef"/>
                         <outlet property="loginButton" destination="LUU-yv-Yh9" id="RWI-Qh-Gt1"/>
                         <outlet property="loginCenterX" destination="b4s-Ov-W6t" id="h06-74-lxu"/>
                         <outlet property="passwordCenterX" destination="7LZ-6H-12I" id="4UY-Ne-srW"/>
@@ -62,10 +105,34 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="230" y="398"/>
+            <point key="canvasLocation" x="114" y="394"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="kiN-mV-P5M">
+            <objects>
+                <viewController id="HvH-7A-TOS" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="o9Y-Zf-un1"/>
+                        <viewControllerLayoutGuide type="bottom" id="M1o-Ve-J7f"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="stc-XG-c6h">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NrA-dS-jr8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="530" y="394"/>
         </scene>
     </scenes>
     <resources>
         <image name="banner1" width="283" height="49"/>
+        <image name="bg-sunny" width="320" height="568"/>
+        <image name="bg-sunny-cloud-1" width="159" height="50"/>
+        <image name="bg-sunny-cloud-2" width="138" height="49"/>
+        <image name="bg-sunny-cloud-3" width="74" height="35"/>
+        <image name="bg-sunny-cloud-4" width="115" height="50"/>
     </resources>
 </document>

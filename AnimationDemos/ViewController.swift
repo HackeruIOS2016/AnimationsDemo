@@ -9,6 +9,11 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet weak var cloud1X: NSLayoutConstraint!
+    @IBOutlet weak var cloud2x: NSLayoutConstraint!
+    @IBOutlet weak var cloud3X: NSLayoutConstraint!
+    @IBOutlet weak var cloud4X: NSLayoutConstraint!
+    
     
     @IBOutlet weak var userCenterX: NSLayoutConstraint!
     
@@ -24,6 +29,7 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        resetClouds()
         resetAnimation()
     }
     override func viewDidAppear(animated: Bool) {
@@ -31,8 +37,48 @@ class ViewController: UIViewController {
         
         
         animateLogin()
-        
+        animateClouds()
     }
+    
+    func resetClouds(){
+        cloud1X.constant = cloud1X.constant - 200
+        cloud2x.constant = cloud2x.constant - 200
+        cloud3X.constant = cloud3X.constant - 200
+        cloud4X.constant = cloud4X.constant - 200
+        view.layoutIfNeeded()
+    }
+    
+    func animateClouds(){
+        UIView.animateWithDuration(6.5, delay: 0, options: [.CurveEaseInOut, .Repeat], animations: { () -> Void in
+                self.cloud1X.constant = self.cloud1X.constant + 200 + 200 + 200
+            
+                self.view.layoutIfNeeded()
+            }){ _ in
+                self.cloud1X.constant = self.cloud1X.constant -  400 - 200
+        }
+        
+        UIView.animateWithDuration(7.5, delay: 0, options: [.CurveEaseInOut, .Repeat, .Autoreverse], animations: { () -> Void in
+            self.cloud2x.constant = self.cloud2x.constant + 200 + 200
+            
+            self.view.layoutIfNeeded()
+            }){ _ in
+        }
+        
+        UIView.animateWithDuration(6.0, delay: 0, options: [.CurveEaseInOut, .Repeat, .Autoreverse], animations: { () -> Void in
+            self.cloud3X.constant = self.cloud3X.constant + 200 + 200
+            
+            self.view.layoutIfNeeded()
+            }){ _ in
+        }
+        
+        UIView.animateWithDuration(8.0, delay: 0, options: [.CurveEaseInOut, .Repeat, .Autoreverse], animations: { () -> Void in
+            self.cloud4X.constant = self.cloud4X.constant + 200 + 200
+            
+            self.view.layoutIfNeeded()
+            }){ _ in
+        }
+    }
+    
     
     func animateLogin(){
         UIView.animateWithDuration(0.5, delay: 0, options: [.CurveEaseInOut], animations: { () -> Void in
