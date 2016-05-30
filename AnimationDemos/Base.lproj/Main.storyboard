@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="HvH-7A-TOS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="a5c-Hl-P2E">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -154,6 +154,69 @@
             </objects>
             <point key="canvasLocation" x="486" y="394"/>
         </scene>
+        <!--Transitions View Controller-->
+        <scene sceneID="ECF-1u-3qu">
+            <objects>
+                <viewController id="a5c-Hl-P2E" customClass="TransitionsViewController" customModule="AnimationDemos" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xcd-IL-LNK"/>
+                        <viewControllerLayoutGuide type="bottom" id="pjv-5Z-Lwl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="q8q-VS-ap3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner1" translatesAutoresizingMaskIntoConstraints="NO" id="DaN-3e-pkq">
+                                <rect key="frame" x="32" y="28" width="256" height="49"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oSR-eU-io8">
+                                <rect key="frame" x="89" y="327" width="142" height="128"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coin1" translatesAutoresizingMaskIntoConstraints="NO" id="bDe-B2-cHx">
+                                        <rect key="frame" x="0.0" y="0.0" width="142" height="128"/>
+                                    </imageView>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coin2" translatesAutoresizingMaskIntoConstraints="NO" id="MMW-ip-Jbr">
+                                        <rect key="frame" x="0.0" y="0.0" width="142" height="128"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="MMW-ip-Jbr" secondAttribute="height" multiplier="71:64" id="WCp-UB-WmY"/>
+                                            <constraint firstAttribute="height" constant="128" id="cF2-Qn-H8X"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="2cS-zJ-qmC"/>
+                                    <constraint firstItem="bDe-B2-cHx" firstAttribute="centerX" secondItem="oSR-eU-io8" secondAttribute="centerX" id="EEQ-mI-uz3"/>
+                                    <constraint firstAttribute="width" constant="142" id="Igk-LH-CAq"/>
+                                    <constraint firstItem="MMW-ip-Jbr" firstAttribute="centerY" secondItem="oSR-eU-io8" secondAttribute="centerY" id="InP-oI-3G6"/>
+                                    <constraint firstItem="bDe-B2-cHx" firstAttribute="centerY" secondItem="oSR-eU-io8" secondAttribute="centerY" id="KcP-Nb-sYm"/>
+                                    <constraint firstItem="bDe-B2-cHx" firstAttribute="width" secondItem="MMW-ip-Jbr" secondAttribute="width" id="LAp-8T-06m"/>
+                                    <constraint firstItem="bDe-B2-cHx" firstAttribute="height" secondItem="MMW-ip-Jbr" secondAttribute="height" id="oJp-sY-qmM"/>
+                                    <constraint firstItem="MMW-ip-Jbr" firstAttribute="centerX" secondItem="oSR-eU-io8" secondAttribute="centerX" id="zjI-U7-ACL"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="oSR-eU-io8" firstAttribute="centerX" secondItem="q8q-VS-ap3" secondAttribute="centerX" id="UQW-fh-r1Q"/>
+                            <constraint firstItem="DaN-3e-pkq" firstAttribute="top" secondItem="xcd-IL-LNK" secondAttribute="bottom" constant="8" id="bjB-mH-tyt"/>
+                            <constraint firstItem="DaN-3e-pkq" firstAttribute="width" secondItem="q8q-VS-ap3" secondAttribute="width" multiplier="0.8" id="nB0-d4-mzY"/>
+                            <constraint firstItem="DaN-3e-pkq" firstAttribute="centerX" secondItem="q8q-VS-ap3" secondAttribute="centerX" id="nMo-Wx-Rdi"/>
+                            <constraint firstItem="pjv-5Z-Lwl" firstAttribute="top" secondItem="oSR-eU-io8" secondAttribute="bottom" constant="25" id="w15-BV-FFn"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="bannerView" destination="DaN-3e-pkq" id="BtF-ba-2gh"/>
+                        <outlet property="coinBack" destination="MMW-ip-Jbr" id="yl4-Ur-Ggl"/>
+                        <outlet property="coinContainer" destination="oSR-eU-io8" id="tPA-Xf-398"/>
+                        <outlet property="coinHead" destination="bDe-B2-cHx" id="F9h-gx-pcI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YGT-Vp-TGf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1066" y="439"/>
+        </scene>
     </scenes>
     <resources>
         <image name="banner1" width="283" height="49"/>
@@ -162,5 +225,7 @@
         <image name="bg-sunny-cloud-2" width="138" height="49"/>
         <image name="bg-sunny-cloud-3" width="74" height="35"/>
         <image name="bg-sunny-cloud-4" width="115" height="50"/>
+        <image name="coin1" width="355" height="355"/>
+        <image name="coin2" width="355" height="355"/>
     </resources>
 </document>
