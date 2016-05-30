@@ -3,7 +3,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -18,25 +19,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="snf-bD-PJl">
-                                <rect key="frame" x="16" y="20" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pEv-zA-W1A"/>
-                                </connections>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Name..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Ni-1e-tse">
+                                <rect key="frame" x="32" y="28" width="256" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C3m-7I-bEl">
+                                <rect key="frame" x="32" y="66" width="256" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LUU-yv-Yh9">
+                                <rect key="frame" x="150" y="104" width="141" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="6Nb-zY-5WE"/>
+                                    <constraint firstAttribute="width" secondItem="LUU-yv-Yh9" secondAttribute="height" multiplier="141:25" id="zsu-Xm-kJ0"/>
+                                </constraints>
+                                <state key="normal" title="Login" backgroundImage="banner1"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="snf-bD-PJl" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="5Ym-OG-S1s"/>
-                            <constraint firstItem="snf-bD-PJl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="fUD-PD-qNt"/>
+                            <constraint firstItem="0Ni-1e-tse" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="3fF-kx-Fjl"/>
+                            <constraint firstItem="C3m-7I-bEl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7LZ-6H-12I"/>
+                            <constraint firstItem="C3m-7I-bEl" firstAttribute="top" secondItem="0Ni-1e-tse" secondAttribute="bottom" constant="8" id="B2o-EO-YCB"/>
+                            <constraint firstItem="0Ni-1e-tse" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UXx-ep-tJE"/>
+                            <constraint firstItem="LUU-yv-Yh9" firstAttribute="top" secondItem="C3m-7I-bEl" secondAttribute="bottom" constant="8" id="WTE-jF-lfh"/>
+                            <constraint firstItem="LUU-yv-Yh9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="60" id="b4s-Ov-W6t"/>
+                            <constraint firstItem="C3m-7I-bEl" firstAttribute="width" secondItem="0Ni-1e-tse" secondAttribute="width" id="k9X-Gh-AjU"/>
+                            <constraint firstItem="0Ni-1e-tse" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="pVb-zZ-2Od"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="loginButton" destination="LUU-yv-Yh9" id="RWI-Qh-Gt1"/>
+                        <outlet property="loginCenterX" destination="b4s-Ov-W6t" id="h06-74-lxu"/>
+                        <outlet property="passwordCenterX" destination="7LZ-6H-12I" id="4UY-Ne-srW"/>
+                        <outlet property="passwordTextField" destination="C3m-7I-bEl" id="7K8-jw-Y6A"/>
+                        <outlet property="userCenterX" destination="UXx-ep-tJE" id="BGj-F8-FwR"/>
+                        <outlet property="userName" destination="0Ni-1e-tse" id="OqR-TB-uss"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="230" y="398"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="banner1" width="283" height="49"/>
+    </resources>
 </document>

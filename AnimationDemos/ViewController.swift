@@ -9,35 +9,49 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBAction func tapped(sender: UIButton) {
+    
+    @IBOutlet weak var userCenterX: NSLayoutConstraint!
+    
+    @IBOutlet weak var passwordCenterX: NSLayoutConstraint!
+    
+    
+    @IBOutlet weak var loginCenterX: NSLayoutConstraint!
+    
+    @IBOutlet weak var userName: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         
+        resetAnimation()
+        animateLogin()
+        
+    }
+    
+    func animateLogin(){
         UIView.animateWithDuration(0.5, delay: 0, options: [.CurveEaseInOut], animations: { () -> Void in
-                sender.center.x = sender.center.x + 100
-                sender.center.y = sender.center.y + 100
+                self.userName.center.x = self.view.center.x
             }, completion: nil)
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    var colors = [UIColor.orangeColor(),UIColor.whiteColor(), UIColor.blueColor(), UIColor.purpleColor()]
-    
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-//        UIView.animateWithDuration(1){
-//            self.view.backgroundColor = self.colors[Int.nextRandom(self.colors.count)]
-//        }
-//        
         
-     
-        UIView.animateWithDuration(1, delay: 0, options: [.Repeat, .Autoreverse, .CurveEaseInOut], animations: { () -> Void in
-                self.view.backgroundColor = UIColor.orangeColor()
+        UIView.animateWithDuration(0.5, delay: 0.4, options: [.CurveEaseInOut], animations: { () -> Void in
+                self.passwordTextField.center.x = self.view.center.x
             }, completion: nil)
+        
+        UIView.animateWithDuration(0.5, delay: 0.9, options: [.CurveEaseInOut], animations: { () -> Void in
+                self.loginButton.center.x = self.view.center.x + 70
+            }, completion: nil)
+        
+        
     }
-
     
+    func resetAnimation(){
+        userName.center.x = -200
+        passwordTextField.center.x = -200
+        loginButton.center.x = -200
+    }
 }
+ 
 
 extension Int{
     static func nextRandom(max:Int)->Int{
