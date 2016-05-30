@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
@@ -107,10 +108,10 @@
             </objects>
             <point key="canvasLocation" x="114" y="394"/>
         </scene>
-        <!--View Controller-->
+        <!--Spring Demo View Controller-->
         <scene sceneID="kiN-mV-P5M">
             <objects>
-                <viewController id="HvH-7A-TOS" sceneMemberID="viewController">
+                <viewController id="HvH-7A-TOS" customClass="SpringDemoViewController" customModule="AnimationDemos" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="o9Y-Zf-un1"/>
                         <viewControllerLayoutGuide type="bottom" id="M1o-Ve-J7f"/>
@@ -118,13 +119,40 @@
                     <view key="view" contentMode="scaleToFill" id="stc-XG-c6h">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BhQ-wU-TgZ">
+                                <rect key="frame" x="36" y="69" width="248" height="100"/>
+                                <color key="backgroundColor" red="0.83821405741693988" green="0.98512941383246977" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Qrg-Ai-yNh"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sXq-aU-PnL">
+                                <rect key="frame" x="274" y="28" width="30" height="30"/>
+                                <state key="normal" title="+"/>
+                                <connections>
+                                    <action selector="tapped:" destination="HvH-7A-TOS" eventType="touchUpInside" id="pih-Hr-rvE"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="BhQ-wU-TgZ" firstAttribute="leading" secondItem="stc-XG-c6h" secondAttribute="leadingMargin" constant="20" id="DzU-a2-fox"/>
+                            <constraint firstItem="sXq-aU-PnL" firstAttribute="trailing" secondItem="stc-XG-c6h" secondAttribute="trailingMargin" id="OsZ-Mx-h9F"/>
+                            <constraint firstItem="sXq-aU-PnL" firstAttribute="top" secondItem="o9Y-Zf-un1" secondAttribute="bottom" constant="8" id="UJX-LF-PGx"/>
+                            <constraint firstItem="BhQ-wU-TgZ" firstAttribute="top" secondItem="sXq-aU-PnL" secondAttribute="bottom" constant="11" id="c70-fl-r9D"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="BhQ-wU-TgZ" secondAttribute="trailing" constant="20" id="t6f-Yp-XR0"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="containerHeight" destination="Qrg-Ai-yNh" id="YI3-o2-fG7"/>
+                        <outlet property="containerView" destination="BhQ-wU-TgZ" id="ufO-wY-QeC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NrA-dS-jr8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="530" y="394"/>
+            <point key="canvasLocation" x="486" y="394"/>
         </scene>
     </scenes>
     <resources>

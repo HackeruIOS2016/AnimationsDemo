@@ -60,6 +60,7 @@
 		6D7E21CC1CFC114A00036607 /* AnimationDemos */ = {
 			isa = PBXGroup;
 			children = (
+				6D7E21E41CFC4DBC00036607 /* SpringDemoViewController.swift */,
 				6D7E21CD1CFC114A00036607 /* AppDelegate.swift */,
 				6D7E21CF1CFC114A00036607 /* ViewController.swift */,
 				6D7E21D11CFC114A00036607 /* Main.storyboard */,
@@ -68,7 +69,6 @@
 				6D7E21D91CFC114A00036607 /* LaunchScreen.storyboard */,
 				6D7E21DC1CFC114A00036607 /* Info.plist */,
 				6D7E21D41CFC114A00036607 /* AnimationDemos.xcdatamodeld */,
-				6D7E21E41CFC4DBC00036607 /* SpringDemoViewController.swift */,
 			);
 			path = AnimationDemos;
 			sourceTree = "<group>";
